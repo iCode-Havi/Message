@@ -8,11 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
+@Entity
 @Getter
 @Setter
-public class OrderMessage {
-    private String receiverType;
-    private String adminStatus;
-    private String senderType;
+public class Message {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long message;
+    private String replyMessage;
 }
